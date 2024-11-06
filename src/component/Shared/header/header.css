@@ -1,0 +1,9 @@
+.header-image{
+    height: 38px;
+    cursor: pointer;
+    padding: 6px;
+    margin: 0 6px;
+}
+.right-position{
+    right: 0;
+}

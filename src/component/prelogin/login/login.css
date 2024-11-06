@@ -1,0 +1,14 @@
+.login-left-section-image{
+    height: auto;
+    width: 100%;
+}
+.login-right-section{
+    border: 1px solid lightgrey;
+    padding: 30px;
+    border-radius: 10px;
+}
+.login-hi-heading{
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,32 @@
+.border-radius{
+  border-radius: 15px !important;
+}
+.button-active{
+  background-color: #9AC7BC !important;
+  color: #fff;
+  font-weight: 600;
+  border-color: #b3ccf1 !important;
+}
+.button-transparent{
+  border: 1px solid #b3ccf1 !important ;
+}
+.label-style{
+  font-weight: 500;
+  font-size: 15px;
+}
+.boxshadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bg-gray{
+  background-color: #9AC7BC;
+}
+a{
+ text-decoration: none;
+}
+.row{
+  margin: 0;
+  padding: 0;
+}
+.col{
+  padding: 0;
+}
