@@ -5,7 +5,7 @@ import { Form, Button, Row, Col, InputGroup, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import './signup.css'; // Ensure you have appropriate CSS for styling
 
-const Signup = () => {
+const Signup = ({setKey}) => {
   const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm();
   
   const [countries, setCountries] = useState([]);
@@ -108,16 +108,17 @@ const Signup = () => {
   const onSubmit = (data) => {
     console.log('Form Data:', data);
     // Handle form submission logic here
+    setKey("login")
   };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       {/* Radio buttons for Individual/Enterprises/Government */}
-      <Row className="mb-2 p-0 m-0">
-        <Form.Group as={Col} controlId="formGridType">
+      <Row className="mb-2">
+        <Form.Group controlId="formGridType">
           <Form.Label className="label-style">Individual/Enterprises/Government</Form.Label>
           <Row>
-            <Col md={4} className="p-0">
+            <Col md={4} className="">
               <Form.Check
                 type="radio"
                 label="Individual"
@@ -126,7 +127,7 @@ const Signup = () => {
                 {...register('userType', { required: 'Please select your type' })}
               />
             </Col>
-            <Col md={4} className="p-0">
+            <Col md={4} className="">
               <Form.Check
                 type="radio"
                 label="Enterprises"
@@ -135,7 +136,7 @@ const Signup = () => {
                 {...register('userType', { required: 'Please select your type' })}
               />
             </Col>
-            <Col md={4} className="p-0">
+            <Col md={4} className="">
               <Form.Check
                 type="radio"
                 label="Government"
@@ -151,7 +152,7 @@ const Signup = () => {
 
       {/* Full Name */}
       <Row>
-        <Col md={6} className="p-0">
+        <Col md={6} className="">
           <Form.Group className="mb-2" controlId="formSignupName">
             <Form.Label className="label-style">Full Name</Form.Label>
             <Form.Control
@@ -163,7 +164,7 @@ const Signup = () => {
             {errors.fullName && <Form.Text className="text-danger">{errors.fullName.message}</Form.Text>}
           </Form.Group>
         </Col>
-        <Col md={6} className="p-0">
+        <Col md={6} className="">
           <Form.Group className="mb-2" controlId="formSignupLastName">
             <Form.Label className="label-style">Last Name</Form.Label>
             <Form.Control
@@ -277,7 +278,7 @@ const Signup = () => {
         <Col>
           <Form.Label className="label-style">Mobile Number</Form.Label>
           <InputGroup>
-            <Col xs={2} className="p-0">
+            <Col xs={2} className="">
               <Form.Select
                 className={`border-radius ${errors.mobileCode ? 'is-invalid' : ''}`}
                 {...register('mobileCode', { required: 'Please select a country code' })}
@@ -291,7 +292,7 @@ const Signup = () => {
               {errors.mobileCode && <Form.Text className="text-danger">{errors.mobileCode.message}</Form.Text>}
             </Col>
 
-            <Col xs={10} className="p-0">
+            <Col xs={10} className="">
               <Form.Control
                 type="text"
                 placeholder="Mobile Number"
@@ -312,7 +313,7 @@ const Signup = () => {
 
       {/* Fax and Phone */}
       <Row>
-        <Col md={6} className="p-0">
+        <Col md={6} className="">
           <Form.Group className="mb-2" controlId="formSignupFax">
             <Form.Label className="label-style">Fax</Form.Label>
             <Form.Control
@@ -330,7 +331,7 @@ const Signup = () => {
             {errors.fax && <Form.Text className="text-danger">{errors.fax.message}</Form.Text>}
           </Form.Group>
         </Col>
-        <Col md={6} className="p-0">
+        <Col md={6} className="">
           <Form.Group className="mb-2 pl-2" controlId="formSignupPhone">
             <Form.Label className="label-style">Phone</Form.Label>
             <Form.Control
@@ -352,7 +353,7 @@ const Signup = () => {
 
       {/* Password and Confirm Password */}
       <Row>
-        <Col md={6} className="p-0">
+        <Col md={6} className="">
           <Form.Group className="mb-2" controlId="formSignupPassword">
             <Form.Label className="label-style">Password</Form.Label>
             <Form.Control
@@ -374,7 +375,7 @@ const Signup = () => {
             {errors.password && <Form.Text className="text-danger">{errors.password.message}</Form.Text>}
           </Form.Group>
         </Col>
-        <Col md={6} className="p-0">
+        <Col md={6} className="">
           <Form.Group className="mb-2" controlId="formSignupConfirmPassword">
             <Form.Label className="label-style">Confirm Password</Form.Label>
             <Form.Control

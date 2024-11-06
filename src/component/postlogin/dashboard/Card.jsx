@@ -30,7 +30,7 @@ const ProductCard = ({ image, title, category, price, quantity, updateQuantity }
     };
 
     return (
-        <Card className="product-card m-3">
+        <Card className="product-card m-1 m-lg-3">
             <div className="image-container">
                 <Card.Img
                     variant="top"

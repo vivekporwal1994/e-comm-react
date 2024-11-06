@@ -4,14 +4,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import "./header.css"
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Badge } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header({ totalQuantity }) {
+    const navigate = useNavigate()
     return (
         <>
             {['xxl'].map((expand) => (
                 <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
                     <Container>
-                        <Navbar.Brand href="#">ShopLane</Navbar.Brand>
+                        <Navbar.Brand className='cursor-pointer' onClick={()=>{navigate("/")}}>ShopLane</Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}

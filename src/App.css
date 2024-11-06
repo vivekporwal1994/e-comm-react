@@ -23,10 +23,7 @@
 a{
  text-decoration: none;
 }
-.row{
-  margin: 0;
-  padding: 0;
-}
-.col{
-  padding: 0;
+
+.cursor-pointer{
+  cursor: pointer;
 }
